@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public AudioClip ghostSoundClip;
     public AudioClip ghostHitClip;
     public float audioRange = 20f;
+    public float ghostFollowRange = 30f;   //ghosts will not follow unless you are within range
 
     GameObject player;
 
@@ -41,7 +42,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null)
+        //calculate the distance to the player and set the volume accordingly
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        if (player != null && distance <= ghostFollowRange)
         {
             //rotate ourself to face the player
             transform.LookAt(player.transform);
@@ -58,8 +62,6 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            //calculate the distance to the player and set the volume accordingly
-            float distance = Vector3.Distance(transform.position, player.transform.position);
             if (distance < audioRange)
             {
                 //when the distance is 0, set the volume to 1 (max).  When the distance = audioRange, set the volume to 0 (min)
