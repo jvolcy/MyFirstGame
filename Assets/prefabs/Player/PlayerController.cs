@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,10 +24,16 @@ public class PlayerController : MonoBehaviour
         GameObject objectWeCollidedWith = other.gameObject;
 
         //Debug.Log("ouch! " + objectWeCollidedWith.name);
-     
-        if (objectWeCollidedWith.name == "EnemyCapsule")
+
+        if (objectWeCollidedWith.name == "Enemy")
         {
-            Debug.Log("ouch!");
+            //Debug.Log("ouch!");
+
+            //for now, destroy the enemy that touched us
+            Destroy(objectWeCollidedWith);
+
+            //play the "ouch!" audio clip
+            audioSource.Play();
         }
     }
 
