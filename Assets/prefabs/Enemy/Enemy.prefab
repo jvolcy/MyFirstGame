@@ -51,7 +51,7 @@ MonoBehaviour:
   enemySoundClip: {fileID: 8300000, guid: 50d690a5f18624476ad382f3c353fe7e, type: 3}
   enemyHitClip: {fileID: 8300000, guid: eb91153b8a7c548d9b306f2449695f2e, type: 3}
   audioRange: 20
-  enemyFollowRange: 30
+  enemyFollowRange: 100
 --- !u!136 &286460327262665191
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eb91153b8a7c548d9b306f2449695f2e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

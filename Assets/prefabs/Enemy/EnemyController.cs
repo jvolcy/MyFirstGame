@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    /*
+     * Usage: instantiate an enemy factory for each type of enemy that needs to be mass-produced.
+     */
 
     public float speed = 1f;
     public AudioClip enemySoundClip;
