@@ -41,15 +41,5 @@ public class PhaserController : MonoBehaviour
         //destroy the phaser
         Destroy(gameObject);
 
-        /*
-        if (objectWeCollidedWith.tag == "Enemy")
-        {
-            //Debug.Log("ouch!");
-
-            //for now, destroy the enemy that touched us
-            Destroy(objectWeCollidedWith);
-
-        }
-        */
     }
 }

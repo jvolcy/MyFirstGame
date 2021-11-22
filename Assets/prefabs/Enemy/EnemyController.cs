@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+
     public float speed = 1f;
+    public AudioClip ghostSoundClip;
+    public AudioClip ghostHitClip;
+    public float audioRange = 20f;
+
     GameObject player;
 
     bool bDestroy = false;  //set to true to destroy the object
@@ -15,6 +20,10 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = ghostSoundClip;
+        audioSource.loop = true;
+        audioSource.volume = 0f;
+        audioSource.Play();
 
         //find the player.  This should be the only GameObject tagged as 'Player'
         try
@@ -47,6 +56,20 @@ public class EnemyController : MonoBehaviour
             //destroy the enemy
             Destroy(gameObject);
         }
+        else
+        {
+            //calculate the distance to the player and set the volume accordingly
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            if (distance < audioRange)
+            {
+                //when the distance is 0, set the volume to 1 (max).  When the distance = audioRange, set the volume to 0 (min)
+                audioSource.volume = (audioRange - distance) / audioRange;
+            }
+            else
+            {
+                audioSource.volume = 0f;
+            }
+        }
     }
 
 
@@ -60,6 +83,8 @@ public class EnemyController : MonoBehaviour
         if (objectWeCollidedWith.tag == "Phaser")
         {
             //play the yell sound
+            audioSource.clip = ghostHitClip;
+            audioSource.loop = false;
             audioSource.Play();
 
             //mark ourselves for destruction when the audio clip ends
