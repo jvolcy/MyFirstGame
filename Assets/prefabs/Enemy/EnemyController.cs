@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public float speed = 1f;
     GameObject player;
 
     // Start is called before the first frame update
@@ -29,6 +30,9 @@ public class EnemyController : MonoBehaviour
         {
             //rotate ourself to face the player
             transform.LookAt(player.transform);
+
+            //move forward (towards the player) at the user specified speed
+            transform.Translate(Time.deltaTime * speed * transform.forward, Space.World);
         }
     }
 }
