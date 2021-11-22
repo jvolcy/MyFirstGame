@@ -5,5 +5,17 @@ creator: Legnalegna55
 License: CC0 1.0
 
 =========================================
+phaser.wav
+source: https://freesound.org/people/VeronicaStratton/sounds/388493/
+creator: VeronicaStratton
+License: CC0 1.0
+
+=========================================
+zombie_hit.wav
+source: https://freesound.org/people/MisterKidX/sounds/454837/
+creator: MisterKidX
+License: CC BY 3.0
+
+=========================================
 
 
