@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject phaserPrefab;
+
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -39,7 +41,9 @@ public class PlayerController : MonoBehaviour
 
     void OnShoot()
     {
-        Debug.Log("Shoot!");
+        //Debug.Log("Shoot!");
+        //instantiate a phaser 0.5 meters up from the floor
+        Instantiate(phaserPrefab, transform.position + 0.5f * transform.up, transform.rotation);
     }
 
 }
