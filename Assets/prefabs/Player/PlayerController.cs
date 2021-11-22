@@ -37,5 +37,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnShoot()
+    {
+        Debug.Log("Shoot!");
+    }
 
 }
