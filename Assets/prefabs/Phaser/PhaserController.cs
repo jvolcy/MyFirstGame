@@ -30,4 +30,22 @@ public class PhaserController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //get the GO associated with the thing we collided with.
+        GameObject objectWeCollidedWith = other.gameObject;
+
+        Debug.Log("Hit " + objectWeCollidedWith.name);
+        /*
+        if (objectWeCollidedWith.tag == "Enemy")
+        {
+            //Debug.Log("ouch!");
+
+            //for now, destroy the enemy that touched us
+            //Destroy(objectWeCollidedWith);
+
+        }
+        */
+    }
 }

@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
     void OnShoot()
     {
         //Debug.Log("Shoot!");
-        //instantiate a phaser 0.5 meters up from the floor
-        Instantiate(phaserPrefab, transform.position + 0.5f * transform.up, transform.rotation);
+        //instantiate a phaser 0.5 meters up from the floor and 2 meters ahead of the player.  This prevents us from shooting ourself!
+        Instantiate(phaserPrefab, transform.position + 0.5f * transform.up + 2.0f * transform.forward, transform.rotation);
     }
 
 }
