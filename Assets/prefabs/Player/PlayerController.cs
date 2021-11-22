@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("ouch! " + objectWeCollidedWith.name);
 
-        if (objectWeCollidedWith.name == "Enemy")
+        if (objectWeCollidedWith.tag == "Enemy")
         {
             //Debug.Log("ouch!");
 
