@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
+
     public GameObject phaserPrefab;
 
     AudioSource audioSource;
+
+    //game stats scriptable types
+    public IntVariable Health;
+
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -36,6 +44,9 @@ public class PlayerController : MonoBehaviour
 
             //play the "ouch!" audio clip
             audioSource.Play();
+
+            //decrease the health
+            Health.value -= 10;
         }
     }
 

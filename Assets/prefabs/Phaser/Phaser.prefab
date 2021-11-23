@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04881cfd3a0e489e9e1c30ceac45947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: {fileID: 11400000, guid: 2d621683f34b245228f1a4e3c4c8757f, type: 2}
   speed: 40
   range: 30
 --- !u!54 &150043012499355637

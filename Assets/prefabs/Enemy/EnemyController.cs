@@ -16,8 +16,6 @@ public class EnemyController : MonoBehaviour
 
     GameObject player;
 
-    bool bDestroy = false;  //set to true to destroy the object
-
     AudioSource audioSource;
 
     //enemy state ENUM

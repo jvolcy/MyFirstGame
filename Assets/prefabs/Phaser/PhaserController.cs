@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PhaserController : MonoBehaviour
 {
+    //game stats scriptable types
+    public IntVariable Score;
+
     public float speed = 40f;   //how fast the phaser moves (meters/sec)
     public float range = 30f;   //how far the phaser goes (meters)
 
@@ -38,8 +41,12 @@ public class PhaserController : MonoBehaviour
 
         Debug.Log("Phaser Hit " + objectWeCollidedWith.name);
 
-        //destroy the phaser
-        Destroy(gameObject);
+        if (objectWeCollidedWith.tag == "Enemy")
+        {
+            //destroy the phaser
+            Destroy(gameObject);
 
+            Score.value += 100;
+        }
     }
 }
