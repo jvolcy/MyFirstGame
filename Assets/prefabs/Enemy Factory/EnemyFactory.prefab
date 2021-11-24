@@ -43,9 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a39a03fd9e1472eb534eab1d3a00b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  numEnemies: 50
-  Xmin: -500
-  Xmax: 500
-  Zmin: -500
-  Zmax: 500
+  enemyPrefabs: []
+  numActiveEnemies: {fileID: 11400000, guid: 110a9c429ed3c466ab8a111471e16034, type: 2}
+  PlayAreaMinXY: {fileID: 11400000, guid: 7dbf5a7af84b74794a2f38601c068239, type: 2}
+  PlayAreaMaxXY: {fileID: 11400000, guid: f9516ff6be9ff4a5eb7c85822bd58f7e, type: 2}

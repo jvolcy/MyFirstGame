@@ -5,23 +5,37 @@ using UnityEngine;
 public class EnemyFactory : MonoBehaviour
 {
     public List <GameObject> enemyPrefabs;
-    public int numEnemies = 10;
-    public float Xmin = -500f;
-    public float Xmax = 500f;
-    public float Zmin = -500f;
-    public float Zmax = 500f;
+
+    //# of simultaneous enemies to spawn
+    public IntVariable NumActiveEnemies;
+    public int DefaultNumActiveEnemies = 40;
+    IntReference mNumActiveEnemies;
+
+    //lower left corner of the play rectangle
+    public Vector2Variable PlayAreaMinXY;
+    public Vector2 DefaultPlayAreaMinXY = new Vector2(-400, -400);
+    Vector2Reference mPlayAreaMinxy;
+
+    //upper right corner of the play rectangle
+    public Vector2Variable PlayAreaMaxXY;
+    public Vector2 DefaultPlayAreaMaxXY = new Vector2(400, 400);
+    Vector2Reference mPlayAreaMaxxy;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        float XRange = Xmax - Xmin;
-        float ZRange = Zmax - Zmin;
+        //create the scriptable type references
+        mNumActiveEnemies = new IntReference(NumActiveEnemies, DefaultNumActiveEnemies);
+        mPlayAreaMinxy = new Vector2Reference(PlayAreaMinXY, DefaultPlayAreaMinXY);
+        mPlayAreaMaxxy = new Vector2Reference(PlayAreaMaxXY, DefaultPlayAreaMaxXY);
 
-        for (int i = 0; i < numEnemies; i++)
+        //instantiate the enemies
+        for (int i = 0; i < mNumActiveEnemies.value; i++)
         {
             //pick a random spot on the terrain
-            float x = Random.Range(Xmin, Xmax);
-            float z = Random.Range(Zmin, Zmax);
+            float x = Random.Range(mPlayAreaMinxy.value.x, mPlayAreaMaxxy.value.x);
+            float z = Random.Range(mPlayAreaMinxy.value.y, mPlayAreaMaxxy.value.y);
 
             //don't worry about the vertical placement... the ghosts can walk through walls
             Vector3 position = new Vector3(x, 0f, z);
@@ -32,9 +46,5 @@ public class EnemyFactory : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

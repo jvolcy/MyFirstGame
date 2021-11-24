@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: cfd9e5af1f4454bef8d3244fcdd5acf0
+guid: e03acc2c4383a4adc82cc0d00663eb84
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - NUM_ATTACK_ANIMATIONS: {instanceID: 0}
-  - enemySoundClip: {instanceID: 0}
-  - enemyHitClip: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

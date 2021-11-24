@@ -841,11 +841,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd9e5af1f4454bef8d3244fcdd5acf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  NumAttackAnimations: {fileID: 11400000, guid: ec363317b9b1e4c48838719da38b77ac, type: 2}
+  DefaultNumAttackAnimations: 1
+  DyingTime: {fileID: 11400000, guid: 43f93dedfde284fe2b94dfaa4b28bd6d, type: 2}
+  DefaultDyingTime: 5
+  EnemyTravelSpeed: {fileID: 11400000, guid: a4f9d44bab64d4b9ebb682032b5bf57f, type: 2}
+  DefaultEnemyTravelSpeed: 2
+  EnemyAudioRange: {fileID: 11400000, guid: 817721c0007e84599a7cbeaba989501a, type: 2}
+  DefaultEnemyAudioRange: 20
+  EnemyFollowRange: {fileID: 11400000, guid: 4dd21d071183049a58ddbc002fe435a5, type: 2}
+  DefaultEnemyFollowRange: 30
   enemySoundClip: {fileID: 8300000, guid: 50d690a5f18624476ad382f3c353fe7e, type: 3}
   enemyHitClip: {fileID: 8300000, guid: eb91153b8a7c548d9b306f2449695f2e, type: 3}
-  audioRange: 20
-  enemyFollowRange: 100
 --- !u!136 &1645093987246611453
 CapsuleCollider:
   m_ObjectHideFlags: 0

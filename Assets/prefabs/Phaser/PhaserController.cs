@@ -7,14 +7,26 @@ public class PhaserController : MonoBehaviour
     //game stats scriptable types
     public IntVariable Score;
 
-    public float speed = 40f;   //how fast the phaser moves (meters/sec)
-    public float range = 30f;   //how far the phaser goes (meters)
+    //how fast the phaser moves (meters/sec)
+    public FloatVariable PhaserSpeed;
+    public float DefaultPhaserSpeed = 40f;
+    FloatReference mPhaserSpeed;
+
+
+    //how far the phaser goes (meters)
+    public FloatVariable PhaserRange;
+    public float DefaultPhaserRange = 30f;
+    FloatReference mPhaserRange;
 
     Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        //create the scriptable type references
+        mPhaserSpeed = new FloatReference(PhaserSpeed, DefaultPhaserSpeed);
+        mPhaserRange = new FloatReference(PhaserRange, DefaultPhaserRange);
+
         startPosition = transform.position;
     }
 
@@ -22,13 +34,13 @@ public class PhaserController : MonoBehaviour
     void Update()
     {
         //move forward
-        transform.position += Time.deltaTime * speed * transform.forward;
+        transform.position += Time.deltaTime * mPhaserSpeed.value * transform.forward;
 
         //calculate distance traveled
         float distance = Vector3.Distance(startPosition, transform.position);
 
         //terminate the phaser if we are past the range
-        if (distance > range)
+        if (distance > mPhaserRange.value)
         {
             Destroy(gameObject);
         }

@@ -8,15 +8,35 @@ public class EnemyController : MonoBehaviour
      * Usage: instantiate an enemy factory for each type of enemy that needs to be mass-produced.
      */
 
-    //this is a hack.  The # of attack animations should not be fixed.
-    const int NUM_ATTACK_ANIMATIONS = 4;
-    const float DYING_TIME = 5; //seconds for enemy from shot to death
+    //this is bit of a hack.  The # of attack animations should not be fixed.
+    public IntVariable NumAttackAnimations;
+    public int DefaultNumAttackAnimations = 1;
+    IntReference mNumAttackAnimations;
 
-    public float speed = 1f;
+    //seconds for enemy from shot to death
+    public FloatVariable DyingTime;
+    public float DefaultDyingTime = 5;
+    FloatReference mDyingTime;
+
+    //enemy travel speed
+    public FloatVariable EnemyTravelSpeed;
+    public float DefaultEnemyTravelSpeed = 2;
+    FloatReference mEnemyTravelSpeed;
+
+    //enemy audio range
+    public FloatVariable EnemyAudioRange;
+    public float DefaultEnemyAudioRange = 20f;
+    FloatReference mEnemyAudioRange;
+
+    //enemy follow range (how close the player needs to be before the enemy starts to follow)
+    //enemys will not follow unless player is within range
+    public FloatVariable EnemyFollowRange;
+    public float DefaultEnemyFollowRange = 30f;
+    FloatReference mEnemyFollowRange;
+  
+    //sound clips
     public AudioClip enemySoundClip;
     public AudioClip enemyHitClip;
-    public float audioRange = 20f;
-    public float enemyFollowRange = 30f;   //enemys will not follow unless you are within range
 
     GameObject player;
 
@@ -33,6 +53,13 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //create the scriptable type references
+        mNumAttackAnimations = new IntReference(NumAttackAnimations, DefaultNumAttackAnimations);
+        mDyingTime = new FloatReference(DyingTime, DefaultDyingTime);
+        mEnemyTravelSpeed = new FloatReference(EnemyTravelSpeed, DefaultEnemyTravelSpeed);
+        mEnemyAudioRange = new FloatReference(EnemyAudioRange, DefaultEnemyAudioRange);
+        mEnemyFollowRange = new FloatReference(EnemyFollowRange, DefaultEnemyFollowRange);
+
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = enemySoundClip;
         audioSource.loop = true;
@@ -74,10 +101,12 @@ public class EnemyController : MonoBehaviour
         {
             //we are out of range
             case EnemyState.IDLE:
-                if (distance <= enemyFollowRange)
+                AdjustAudioVolume(distance);
+
+                if (distance <= mEnemyFollowRange.value)
                 {
                     //switch to one of the attack animations
-                    animator.SetInteger("animation", 1 + Random.Range(0, NUM_ATTACK_ANIMATIONS));
+                    animator.SetInteger("animation", 1 + Random.Range(0, mNumAttackAnimations.value));
                     enemyState = EnemyState.ACTIVE;
                 }
                 break;
@@ -87,20 +116,12 @@ public class EnemyController : MonoBehaviour
                 transform.LookAt(player.transform);
 
                 //move forward (towards the player) at the user specified speed
-                transform.Translate(Time.deltaTime * speed * transform.forward, Space.World);
+                transform.Translate(Time.deltaTime * mEnemyTravelSpeed.value * transform.forward, Space.World);
 
-                if (distance < audioRange)
-                {
-                    //when the distance is 0, set the volume to 1 (max).  When the distance = audioRange, set the volume to 0 (min)
-                    audioSource.volume = (audioRange - distance) / audioRange;
-                }
-                else
-                {
-                    audioSource.volume = 0f;
-                }
+                AdjustAudioVolume(distance);
 
-                //if the player runs too far away, go back to idleing
-                if (distance > enemyFollowRange)
+                //if the player runs too far away, go back to idling
+                if (distance > mEnemyFollowRange.value)
                 {
                     animator.SetInteger("animation", 0);    //return to the idle animation
                     enemyState = EnemyState.IDLE;
@@ -108,11 +129,6 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case EnemyState.DYING:
-                //destroy the object after the "zombie-hit" audio clip finishes
-                //if (!audioSource.isPlaying)
-
-                //destroy the object after the dying animation has completed
-                //if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
                 if (Time.fixedTime > deathTime)
                 {
                     enemyState = EnemyState.DEAD;
@@ -130,7 +146,21 @@ public class EnemyController : MonoBehaviour
     }
 
 
-        private void OnTriggerEnter(Collider other)
+    private void AdjustAudioVolume(float distanceToPlayer)
+    {
+        if (distanceToPlayer < mEnemyAudioRange.value)
+        {
+            //when the distance is 0, set the volume to 1 (max).  When the distance = audioRange, set the volume to 0 (min)
+            audioSource.volume = (mEnemyAudioRange.value - distanceToPlayer) / mEnemyAudioRange.value;
+        }
+        else
+        {
+            audioSource.volume = 0f;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
     {
         //get the GO associated with the thing we collided with.
         GameObject objectWeCollidedWith = other.gameObject;
@@ -151,7 +181,7 @@ public class EnemyController : MonoBehaviour
             //switch to the dying animation
             animator.SetInteger("animation", -1);
 
-            deathTime = Time.fixedTime + DYING_TIME;
+            deathTime = Time.fixedTime + mDyingTime.value;
 
             //mark ourselves for destruction when the audio clip ends
             enemyState = EnemyState.DYING;
