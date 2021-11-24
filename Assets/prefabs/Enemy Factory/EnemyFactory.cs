@@ -38,7 +38,7 @@ public class EnemyFactory : MonoBehaviour
             float z = Random.Range(mPlayAreaMinxy.value.y, mPlayAreaMaxxy.value.y);
 
             //don't worry about the vertical placement... the ghosts can walk through walls
-            Vector3 position = new Vector3(x, 0f, z);
+            Vector3 position = new Vector3(x, 10f, z);
 
             //instantiate a random enemy at the random location.
             Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], position, Quaternion.identity);

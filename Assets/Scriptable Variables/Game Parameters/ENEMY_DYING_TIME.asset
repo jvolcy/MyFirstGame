@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc326a7dc687402088bcd02d1f9130e, type: 3}
   m_Name: ENEMY_DYING_TIME
   m_EditorClassIdentifier: 
-  value: 0
+  value: 5

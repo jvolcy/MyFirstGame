@@ -22,3 +22,11 @@ source: https://freesound.org/people/HaraldDeLuca/sounds/380510/
 creator: HaraldDeLuca
 License: CC0 1.0
 
+=========================================
+Night Skybox
+source: https://assetstore.unity.com/packages/2d/textures-materials/sky/free-night-sky-79066
+creator: qianyuez
+License: Standard Unity Asset Store EULA
+
+=========================================
+

@@ -8,19 +8,28 @@ public class EnemyController : MonoBehaviour
      * Usage: instantiate an enemy factory for each type of enemy that needs to be mass-produced.
      */
 
-    //this is bit of a hack.  The # of attack animations should not be fixed.
+    //this is a bit of a hack.  The # of attack animations should not be fixed.
     public IntVariable NumAttackAnimations;
     public int DefaultNumAttackAnimations = 1;
     IntReference mNumAttackAnimations;
 
+    //seconds to delay before animation starts
+    //this is another hack.  For some reason, gravity is slow on our animated
+    //enemies.  By default, we disable the animator, delay by AnimationDelayTime
+    //then, enable the animation.  This gives gravity time to set the enemies on
+    //the terrain.
+    public FloatVariable AnimationDelayTime;
+    public float DefaultAnimationDelayTime = 2f;
+    FloatReference mAnimationDelayTime;
+
     //seconds for enemy from shot to death
     public FloatVariable DyingTime;
-    public float DefaultDyingTime = 5;
+    public float DefaultDyingTime = 5f;
     FloatReference mDyingTime;
 
     //enemy travel speed
     public FloatVariable EnemyTravelSpeed;
-    public float DefaultEnemyTravelSpeed = 2;
+    public float DefaultEnemyTravelSpeed = 2f;
     FloatReference mEnemyTravelSpeed;
 
     //enemy audio range
@@ -44,9 +53,10 @@ public class EnemyController : MonoBehaviour
     AudioSource audioSource;
 
     float deathTime;    //the future time when the enemy will be removed after being shot
+    float animationStartTime;   //the future time when the enemies will become animated.
 
     //enemy state ENUM
-    enum EnemyState { IDLE, ACTIVE, DYING, DEAD };
+    enum EnemyState { NEW, IDLE, ACTIVE, DYING, DEAD };
     private EnemyState enemyState;
 
 
@@ -59,6 +69,7 @@ public class EnemyController : MonoBehaviour
         mEnemyTravelSpeed = new FloatReference(EnemyTravelSpeed, DefaultEnemyTravelSpeed);
         mEnemyAudioRange = new FloatReference(EnemyAudioRange, DefaultEnemyAudioRange);
         mEnemyFollowRange = new FloatReference(EnemyFollowRange, DefaultEnemyFollowRange);
+        mAnimationDelayTime = new FloatReference(AnimationDelayTime, DefaultAnimationDelayTime);
 
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = enemySoundClip;
@@ -69,12 +80,15 @@ public class EnemyController : MonoBehaviour
         //get our animator
         animator = GetComponent<Animator>();
         animator.SetInteger("animation", 0);    //set the animation to 'idle'
+        animator.enabled = false;
+
+        animationStartTime = Time.fixedTime + mAnimationDelayTime.value;
 
         //find the player.  This should be the only GameObject tagged as 'Player'
         try
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            enemyState = EnemyState.IDLE;
+            enemyState = EnemyState.NEW;
         }
         catch (System.Exception e)
         {
@@ -99,6 +113,14 @@ public class EnemyController : MonoBehaviour
 
         switch (enemyState)
         {
+            case EnemyState.NEW:
+                if (Time.fixedTime > animationStartTime)
+                {
+                    //enable the animator
+                    animator.enabled = true;
+                    enemyState = EnemyState.IDLE;
+                }
+                break;
             //we are out of range
             case EnemyState.IDLE:
                 AdjustAudioVolume(distance);
