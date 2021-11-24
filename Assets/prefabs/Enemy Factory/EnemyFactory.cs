@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public List <GameObject> enemyPrefabs;
     public int numEnemies = 10;
     public float Xmin = -500f;
     public float Xmax = 500f;
@@ -26,8 +26,8 @@ public class EnemyFactory : MonoBehaviour
             //don't worry about the vertical placement... the ghosts can walk through walls
             Vector3 position = new Vector3(x, 0f, z);
 
-            //instantiate an enemy at the random location.
-            Instantiate(enemyPrefab, position, Quaternion.identity);
+            //instantiate a random enemy at the random location.
+            Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], position, Quaternion.identity);
         }
         
     }
