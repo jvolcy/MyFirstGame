@@ -10,13 +10,13 @@ public class PhaserController : MonoBehaviour
     //how fast the phaser moves (meters/sec)
     public FloatVariable PhaserSpeed;
     public float DefaultPhaserSpeed = 40f;
-    FloatReference mPhaserSpeed;
+    NullableReferenceVariable<float> mPhaserSpeed;
 
 
     //how far the phaser goes (meters)
     public FloatVariable PhaserRange;
     public float DefaultPhaserRange = 30f;
-    FloatReference mPhaserRange;
+    NullableReferenceVariable<float> mPhaserRange;
 
     Vector3 startPosition;
 
@@ -24,8 +24,8 @@ public class PhaserController : MonoBehaviour
     void Start()
     {
         //create the scriptable type references
-        mPhaserSpeed = new FloatReference(PhaserSpeed, DefaultPhaserSpeed);
-        mPhaserRange = new FloatReference(PhaserRange, DefaultPhaserRange);
+        mPhaserSpeed = new NullableReferenceVariable<float>(PhaserSpeed, DefaultPhaserSpeed);
+        mPhaserRange = new NullableReferenceVariable<float>(PhaserRange, DefaultPhaserRange);
 
         startPosition = transform.position;
     }

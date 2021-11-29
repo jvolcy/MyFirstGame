@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     //this is a bit of a hack.  The # of attack animations should not be fixed.
     public IntVariable NumAttackAnimations;
     public int DefaultNumAttackAnimations = 1;
-    IntReference mNumAttackAnimations;
+    NullableReferenceVariable<int> mNumAttackAnimations;
 
     //seconds to delay before animation starts
     //this is another hack.  For some reason, gravity is slow on our animated
@@ -20,28 +20,28 @@ public class EnemyController : MonoBehaviour
     //the terrain.
     public FloatVariable AnimationDelayTime;
     public float DefaultAnimationDelayTime = 2f;
-    FloatReference mAnimationDelayTime;
+    NullableReferenceVariable<float> mAnimationDelayTime;
 
     //seconds for enemy from shot to death
     public FloatVariable DyingTime;
     public float DefaultDyingTime = 5f;
-    FloatReference mDyingTime;
+    NullableReferenceVariable<float> mDyingTime;
 
     //enemy travel speed
     public FloatVariable EnemyTravelSpeed;
     public float DefaultEnemyTravelSpeed = 2f;
-    FloatReference mEnemyTravelSpeed;
+    NullableReferenceVariable<float> mEnemyTravelSpeed;
 
     //enemy audio range
     public FloatVariable EnemyAudioRange;
     public float DefaultEnemyAudioRange = 20f;
-    FloatReference mEnemyAudioRange;
+    NullableReferenceVariable<float> mEnemyAudioRange;
 
     //enemy follow range (how close the player needs to be before the enemy starts to follow)
     //enemys will not follow unless player is within range
     public FloatVariable EnemyFollowRange;
     public float DefaultEnemyFollowRange = 30f;
-    FloatReference mEnemyFollowRange;
+    NullableReferenceVariable<float> mEnemyFollowRange;
   
     //sound clips
     public AudioClip enemySoundClip;
@@ -64,12 +64,12 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         //create the scriptable type references
-        mNumAttackAnimations = new IntReference(NumAttackAnimations, DefaultNumAttackAnimations);
-        mDyingTime = new FloatReference(DyingTime, DefaultDyingTime);
-        mEnemyTravelSpeed = new FloatReference(EnemyTravelSpeed, DefaultEnemyTravelSpeed);
-        mEnemyAudioRange = new FloatReference(EnemyAudioRange, DefaultEnemyAudioRange);
-        mEnemyFollowRange = new FloatReference(EnemyFollowRange, DefaultEnemyFollowRange);
-        mAnimationDelayTime = new FloatReference(AnimationDelayTime, DefaultAnimationDelayTime);
+        mNumAttackAnimations = new NullableReferenceVariable<int>(NumAttackAnimations, DefaultNumAttackAnimations);
+        mDyingTime = new NullableReferenceVariable<float>(DyingTime, DefaultDyingTime);
+        mEnemyTravelSpeed = new NullableReferenceVariable<float>(EnemyTravelSpeed, DefaultEnemyTravelSpeed);
+        mEnemyAudioRange = new NullableReferenceVariable<float>(EnemyAudioRange, DefaultEnemyAudioRange);
+        mEnemyFollowRange = new NullableReferenceVariable<float>(EnemyFollowRange, DefaultEnemyFollowRange);
+        mAnimationDelayTime = new NullableReferenceVariable<float>(AnimationDelayTime, DefaultAnimationDelayTime);
 
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = enemySoundClip;

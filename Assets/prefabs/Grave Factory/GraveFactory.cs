@@ -10,22 +10,22 @@ public class GraveFactory : MonoBehaviour
     //# of graves to spawn
     public IntVariable NumGraves;
     public int DefaultNumGraves = 500;
-    IntReference mNumGraves;
+    NullableReferenceVariable<int> mNumGraves;
 
     //lower left corner of the play rectangle
     public Vector2Variable PlayAreaMinXY;
     public Vector2 DefaultPlayAreaMinXY = new Vector2(-400, -400);
-    Vector2Reference mPlayAreaMinxy;
+    NullableReferenceVariable<Vector2> mPlayAreaMinxy;
 
     //upper right corner of the play rectangle
     public Vector2Variable PlayAreaMaxXY;
     public Vector2 DefaultPlayAreaMaxXY = new Vector2(400, 400);
-    Vector2Reference mPlayAreaMaxxy;
+    NullableReferenceVariable<Vector2> mPlayAreaMaxxy;
 
     //grave rotation angle ranges
     public Vector3Variable RotationAngleRanges;
     public Vector3 DefaultRotationAngleRanges = new Vector3(30, 360, 30);
-    Vector3Reference mRotationAngleRanges;
+    NullableReferenceVariable<Vector3> mRotationAngleRanges;
 
     public Terrain terrain;
 
@@ -33,10 +33,10 @@ public class GraveFactory : MonoBehaviour
     void Start()
     {
         //create the scriptable type references
-        mNumGraves = new IntReference(NumGraves, DefaultNumGraves);
-        mPlayAreaMinxy = new Vector2Reference(PlayAreaMinXY, DefaultPlayAreaMinXY);
-        mPlayAreaMaxxy = new Vector2Reference(PlayAreaMaxXY, DefaultPlayAreaMaxXY);
-        mRotationAngleRanges = new Vector3Reference(RotationAngleRanges, DefaultRotationAngleRanges);
+        mNumGraves = new NullableReferenceVariable<int>(NumGraves, DefaultNumGraves);
+        mPlayAreaMinxy = new NullableReferenceVariable<Vector2>(PlayAreaMinXY, DefaultPlayAreaMinXY);
+        mPlayAreaMaxxy = new NullableReferenceVariable<Vector2>(PlayAreaMaxXY, DefaultPlayAreaMaxXY);
+        mRotationAngleRanges = new NullableReferenceVariable<Vector3>(RotationAngleRanges, DefaultRotationAngleRanges);
 
         GameObject instance;
 
