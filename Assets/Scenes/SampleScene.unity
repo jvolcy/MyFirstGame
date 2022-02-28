@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.22478154, g: 0.2512765, b: 0.32197466, a: 1}
+  m_IndirectSpecularColor: {r: 0.22485095, g: 0.2513121, b: 0.3221126, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1336,6 +1336,7 @@ GameObject:
   - component: {fileID: 837471935}
   - component: {fileID: 837471937}
   - component: {fileID: 837471938}
+  - component: {fileID: 837471939}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Player
@@ -1407,6 +1408,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &837471939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837471934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b453cffb452e14c64a3b8debadfd3a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaserPrefab: {fileID: 2993147320464034071, guid: 598b3592939f14b9d8ac145a17f5d9ba, type: 3}
+  Health: {fileID: 11400000, guid: d250c093e268b431f9dd805f4c8f44e6, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1595,6 @@ GameObject:
   m_Component:
   - component: {fileID: 979715180}
   - component: {fileID: 979715179}
-  - component: {fileID: 979715181}
   m_Layer: 0
   m_Name: Input Action Manager
   m_TagString: Untagged
@@ -1616,20 +1630,6 @@ Transform:
   m_Father: {fileID: 224273256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &979715181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979715178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b453cffb452e14c64a3b8debadfd3a05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  phaserPrefab: {fileID: 2993147320464034071, guid: 598b3592939f14b9d8ac145a17f5d9ba, type: 3}
-  Health: {fileID: 11400000, guid: d250c093e268b431f9dd805f4c8f44e6, type: 2}
 --- !u!1001 &982021518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1687,7 +1687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
