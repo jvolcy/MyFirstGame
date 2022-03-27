@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6988661717112626183}
   m_Layer: 0
   m_Name: BulletModel
-  m_TagString: Untagged
+  m_TagString: Phaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5465800434457584530}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -142,8 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012b7a8127d829c41b00a7b6b88b285f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTravel: 50
-  Speed: 50
+  Score: {fileID: 0}
+  PhaserSpeed: {fileID: 0}
+  DefaultPhaserSpeed: 40
+  PhaserRange: {fileID: 0}
+  DefaultPhaserRange: 30
 --- !u!82 &-6416961572217587500
 AudioSource:
   m_ObjectHideFlags: 0

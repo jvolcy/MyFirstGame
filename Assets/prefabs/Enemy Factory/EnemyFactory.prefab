@@ -43,7 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a39a03fd9e1472eb534eab1d3a00b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  numActiveEnemies: {fileID: 11400000, guid: 110a9c429ed3c466ab8a111471e16034, type: 2}
+  enemyPrefabs:
+  - {fileID: 3155330702937617618, guid: d69aa4ede2c00486ab2123cdcdb61c61, type: 3}
+  - {fileID: 7971223082435378892, guid: fa1958000587646f3b550b2d19005ada, type: 3}
+  - {fileID: 6304896142391531456, guid: 174123a4ecaad400eb1e6a670b5ef2a2, type: 3}
+  - {fileID: 1189660805777004138, guid: 1e6cc698e908844d2af724fc1b62faf6, type: 3}
+  NumActiveEnemies: {fileID: 11400000, guid: 110a9c429ed3c466ab8a111471e16034, type: 2}
+  DefaultNumActiveEnemies: 4
   PlayAreaMinXY: {fileID: 11400000, guid: 7dbf5a7af84b74794a2f38601c068239, type: 2}
+  DefaultPlayAreaMinXY: {x: -400, y: -400}
   PlayAreaMaxXY: {fileID: 11400000, guid: f9516ff6be9ff4a5eb7c85822bd58f7e, type: 2}
+  DefaultPlayAreaMaxXY: {x: 400, y: 400}

@@ -191,6 +191,8 @@ public class EnemyController : MonoBehaviour
 
         if (objectWeCollidedWith.tag == "Phaser")
         {
+            Debug.Log("Dying");
+
             //stop playing the enemySoundClip and set the volume to 100%
             audioSource.Stop();
             audioSource.volume = 1f;

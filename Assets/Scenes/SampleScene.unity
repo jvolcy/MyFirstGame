@@ -1056,10 +1056,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PhaserGun
       objectReference: {fileID: 0}
-    - target: {fileID: 1228127367381191700, guid: fdba2434fd778a341a53f4c188d3da88, type: 3}
-      propertyPath: m_TagString
-      value: Phaser
-      objectReference: {fileID: 0}
     - target: {fileID: 1228127367381191701, guid: fdba2434fd778a341a53f4c188d3da88, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1432,7 +1428,7 @@ MonoBehaviour:
   m_RigBaseGameObject: {fileID: 837471934}
   m_CameraFloorOffsetObject: {fileID: 2088539185}
   m_CameraGameObject: {fileID: 963194225}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.36144
   m_TrackingSpace: 3
   m_TrackingOriginMode: -2147483648
@@ -1481,7 +1477,7 @@ CapsuleCollider:
   m_Radius: 0.4
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: -0.3}
+  m_Center: {x: 0, y: 0, z: -0.5}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,7 +1531,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1778,7 +1774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1122891875
 Transform:
   m_ObjectHideFlags: 0
@@ -1787,7 +1783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122891874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9300003, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 837471936}
@@ -2782,7 +2778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088539185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.93, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -2966,130 +2962,6 @@ PrefabInstance:
       propertyPath: terrain
       value: 
       objectReference: {fileID: 124859942}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: PlayAreaMaxXY
-      value: 
-      objectReference: {fileID: 11400000, guid: f9516ff6be9ff4a5eb7c85822bd58f7e, type: 2}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: PlayAreaMinXY
-      value: 
-      objectReference: {fileID: 11400000, guid: 7dbf5a7af84b74794a2f38601c068239, type: 2}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.size
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: graveMaterials.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 604739892847858804, guid: 87a8363048b814ff08b271b22ef8c159, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 5867391739746702670, guid: 362d9a0039c574b0b9d1d12fc82d010d, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 5480188637872392099, guid: 993a8bc0bb79e4a95865d59a3d5d3069, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 4324057075282459378, guid: b8433db73927b4727baa21977ce2e6ce, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 587702341410315527, guid: 1b3916c5fef2c4774bd26473d359a594, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 5052894676814092701, guid: 14457a280691447edba03b19a73ca0d2, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 6055997373560844978, guid: ac999000e00ec4e92b1b229472bd5b02, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 7037086503845494210, guid: b635733c46f0e4a81990429546bb596c, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 8828971141220375097, guid: 4d98d06e239ee4d738a72049870e2889, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[9]
-      value: 
-      objectReference: {fileID: 3737410027123500407, guid: 2146eb7a080da40e199f6085cf7a4d34, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[10]
-      value: 
-      objectReference: {fileID: 3697230228070579330, guid: 37ac57f8c5ce54eec803ce2577bbbfdb, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[11]
-      value: 
-      objectReference: {fileID: 999605792090682277, guid: 82e1be3ee214d46ffa04202bbf758f51, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[12]
-      value: 
-      objectReference: {fileID: 4183531997185738194, guid: 899894f8fc03746a8b25b9c9396c5385, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[13]
-      value: 
-      objectReference: {fileID: 4501791869656147108, guid: 520924f8102db4d69aef4bebef335599, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[14]
-      value: 
-      objectReference: {fileID: 4635884888898427802, guid: 67ddac00bc68040cabbdc90849313e6b, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[15]
-      value: 
-      objectReference: {fileID: 4257199917154738526, guid: 10b440b7c7c8f4eabaf5960372cfcb66, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[16]
-      value: 
-      objectReference: {fileID: 355436825148211081, guid: 9fba100ade4704f3ca0c9a512d236438, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[17]
-      value: 
-      objectReference: {fileID: 3315775539486884557, guid: e1896abdf000544b0a70656779182641, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[18]
-      value: 
-      objectReference: {fileID: 8891597609035425887, guid: 4930031f5b3ed44b4b86112d3ae002a6, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: gravePrefabs.Array.data[19]
-      value: 
-      objectReference: {fileID: 4008325495122472363, guid: ff5ea8ec092a24669894dfb5c2095e4d, type: 3}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: DefaultRotationAngleRanges.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: DefaultRotationAngleRanges.y
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: DefaultRotationAngleRanges.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: graveMaterials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fba067345319a4fa48ab91e8e47a9c1f, type: 2}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: graveMaterials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 64ede8d7a310c46b3aaecc2858fefe67, type: 2}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: graveMaterials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7addbec9e3a7c4b5990d0b873a0cf2b3, type: 2}
-    - target: {fileID: 3772680314134513769, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
-      propertyPath: graveMaterials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 30d6ab853288c4590aae6e13351c5e63, type: 2}
     - target: {fileID: 4240860145750394381, guid: 9dbbf07b25298433299b0d2badd84df7, type: 3}
       propertyPath: m_Name
       value: GraveFactory
@@ -3460,42 +3332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: numEnemies
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: enemyPrefab
-      value: 
-      objectReference: {fileID: 3155330702937617618, guid: d69aa4ede2c00486ab2123cdcdb61c61, type: 3}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: NumActiveEnemies
-      value: 
-      objectReference: {fileID: 11400000, guid: 110a9c429ed3c466ab8a111471e16034, type: 2}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: DefaultNumActiveEnemies
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: enemyPrefabs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: enemyPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 3155330702937617618, guid: d69aa4ede2c00486ab2123cdcdb61c61, type: 3}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: enemyPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7971223082435378892, guid: fa1958000587646f3b550b2d19005ada, type: 3}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: enemyPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 6304896142391531456, guid: 174123a4ecaad400eb1e6a670b5ef2a2, type: 3}
-    - target: {fileID: 9169351523246007810, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
-      propertyPath: enemyPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1189660805777004138, guid: 1e6cc698e908844d2af724fc1b62faf6, type: 3}
     - target: {fileID: 9169351523246007811, guid: e6f60c2bca4774e0ab4a08d5028bd5e3, type: 3}
       propertyPath: m_RootOrder
       value: 4

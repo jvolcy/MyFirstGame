@@ -49,7 +49,7 @@ public class PhaserController : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("shoot!");
+        //Debug.Log("shoot!");
         Instantiate(bulletPrefab, barrel.transform.position, barrel.transform.rotation);
     }
 

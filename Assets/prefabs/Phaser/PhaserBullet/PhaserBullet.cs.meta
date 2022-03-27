@@ -3,7 +3,10 @@ guid: 012b7a8127d829c41b00a7b6b88b285f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Score: {fileID: 11400000, guid: 2d621683f34b245228f1a4e3c4c8757f, type: 2}
+  - PhaserSpeed: {instanceID: 0}
+  - PhaserRange: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

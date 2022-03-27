@@ -43,3 +43,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c72d95bc004d48cdb179200a1c1a206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravePrefabs:
+  - {fileID: 604739892847858804, guid: 87a8363048b814ff08b271b22ef8c159, type: 3}
+  - {fileID: 5867391739746702670, guid: 362d9a0039c574b0b9d1d12fc82d010d, type: 3}
+  - {fileID: 5480188637872392099, guid: 993a8bc0bb79e4a95865d59a3d5d3069, type: 3}
+  - {fileID: 4324057075282459378, guid: b8433db73927b4727baa21977ce2e6ce, type: 3}
+  - {fileID: 587702341410315527, guid: 1b3916c5fef2c4774bd26473d359a594, type: 3}
+  - {fileID: 5052894676814092701, guid: 14457a280691447edba03b19a73ca0d2, type: 3}
+  - {fileID: 6055997373560844978, guid: ac999000e00ec4e92b1b229472bd5b02, type: 3}
+  - {fileID: 7037086503845494210, guid: b635733c46f0e4a81990429546bb596c, type: 3}
+  - {fileID: 8828971141220375097, guid: 4d98d06e239ee4d738a72049870e2889, type: 3}
+  - {fileID: 3737410027123500407, guid: 2146eb7a080da40e199f6085cf7a4d34, type: 3}
+  - {fileID: 3697230228070579330, guid: 37ac57f8c5ce54eec803ce2577bbbfdb, type: 3}
+  - {fileID: 999605792090682277, guid: 82e1be3ee214d46ffa04202bbf758f51, type: 3}
+  - {fileID: 4183531997185738194, guid: 899894f8fc03746a8b25b9c9396c5385, type: 3}
+  - {fileID: 4501791869656147108, guid: 520924f8102db4d69aef4bebef335599, type: 3}
+  - {fileID: 4635884888898427802, guid: 67ddac00bc68040cabbdc90849313e6b, type: 3}
+  - {fileID: 4257199917154738526, guid: 10b440b7c7c8f4eabaf5960372cfcb66, type: 3}
+  - {fileID: 355436825148211081, guid: 9fba100ade4704f3ca0c9a512d236438, type: 3}
+  - {fileID: 3315775539486884557, guid: e1896abdf000544b0a70656779182641, type: 3}
+  - {fileID: 8891597609035425887, guid: 4930031f5b3ed44b4b86112d3ae002a6, type: 3}
+  - {fileID: 4008325495122472363, guid: ff5ea8ec092a24669894dfb5c2095e4d, type: 3}
+  graveMaterials:
+  - {fileID: 2100000, guid: fba067345319a4fa48ab91e8e47a9c1f, type: 2}
+  - {fileID: 2100000, guid: 64ede8d7a310c46b3aaecc2858fefe67, type: 2}
+  - {fileID: 2100000, guid: 7addbec9e3a7c4b5990d0b873a0cf2b3, type: 2}
+  - {fileID: 2100000, guid: 30d6ab853288c4590aae6e13351c5e63, type: 2}
+  NumGraves: {fileID: 0}
+  DefaultNumGraves: 500
+  PlayAreaMinXY: {fileID: 11400000, guid: 7dbf5a7af84b74794a2f38601c068239, type: 2}
+  DefaultPlayAreaMinXY: {x: -400, y: -400}
+  PlayAreaMaxXY: {fileID: 11400000, guid: f9516ff6be9ff4a5eb7c85822bd58f7e, type: 2}
+  DefaultPlayAreaMaxXY: {x: 400, y: 400}
+  RotationAngleRanges: {fileID: 0}
+  DefaultRotationAngleRanges: {x: 20, y: 360, z: 20}
+  terrain: {fileID: 0}
