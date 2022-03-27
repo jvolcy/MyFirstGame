@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 //[RequireComponent(typeof(ActionBasedController))]
@@ -8,15 +9,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandController : MonoBehaviour
 {
-    //weight of the "select" animation layer
-    /*
-    [Range(0f, 1f)]
-    public float xselect;
-
-    //weight of the "activation" animation layer
-    [Range(0f, 1f)]
-    public float xactivate;
-    */
 
     //boolean: true = right hand; false = left hand
     public bool RightHand = true;
@@ -31,29 +23,44 @@ public class HandController : MonoBehaviour
         //Debug.Log("Hand Start");
         animator = GetComponent<Animator>();
         controller = GetComponentInParent<ActionBasedController>();
+        controller.activateAction.action.started += Activate;
+        controller.selectAction.action.started += Select;
+        controller.activateAction.action.canceled += DeActivate;
+        controller.selectAction.action.started += Select;
+        controller.selectAction.action.canceled += DeSelect;
+
+        //scale x for left or right hand
         transform.localScale = new Vector3(transform.localScale.x * (RightHand ? 1f : -1f), transform.localScale.y, transform.localScale.z);
     }
 
+
+/*    
     // Update is called once per frame
     void Update()
     {
-        /*
-        select += 0.01f;
-        if (select > 1f) select = 0f;
-        */
-        float select = controller.selectAction.action.ReadValue<float>();
-        float activate = controller.activateAction.action.ReadValue<float>();
+    }
+*/    
 
-        //set the value of the animation layers
-        animator.SetLayerWeight(animator.GetLayerIndex("select"), select);
-        animator.SetLayerWeight(animator.GetLayerIndex("activate"), activate);
+    private void Activate(InputAction.CallbackContext obj)
+    {
+        animator.SetBool("activate", true);
+        //Debug.Log("Activated!!");
     }
 
-    /*
-    public void Select() { select = 1f; }
-    public void DeSelect() { select = 0f; }
+    private void DeActivate(InputAction.CallbackContext obj)
+    {
+        animator.SetBool("activate", false);
+        //Debug.Log("DeActivated!!");
+    }
 
-    public void Activate() { activate = 1f; }
-    public void DeActivate() { activate = 0f; }
-    */
+    private void Select(InputAction.CallbackContext obj)
+    {
+        animator.SetBool("select", true);
+        //Debug.Log("Selected!!");
+    }
+    private void DeSelect(InputAction.CallbackContext obj)
+    {
+        animator.SetBool("select", false);
+        //Debug.Log("DeSelected!!");
+    }
 }

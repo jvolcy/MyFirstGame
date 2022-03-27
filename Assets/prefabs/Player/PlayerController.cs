@@ -57,6 +57,9 @@ public class PlayerController : MonoBehaviour
         //get the GO associated with the thing we collided with.
         GameObject objectWeCollidedWith = other.gameObject;
 
+        //don't collide with the phasers we are shooting, nor with the phaser gun.
+        //if (objectWeCollidedWith.tag == "Phaser") return;
+
         //Debug.Log("ouch! " + objectWeCollidedWith.name);
 
         if (objectWeCollidedWith.tag == "Enemy")
@@ -75,18 +78,20 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
+    /*
         void OnShoot()
     {
         Debug.Log("Shoot!");
         //instantiate a phaser 0.5 meters up from the floor and 2 meters ahead of the player.  This prevents us from shooting ourself!
         Instantiate(phaserPrefab, transform.position + 0.5f * transform.up + 2.0f * transform.forward, transform.rotation);
     }
-
+    */
+    /*
     void OnActivate()
     {
         Debug.Log("Activate!");
         //instantiate a phaser 0.5 meters up from the floor and 2 meters ahead of the player.  This prevents us from shooting ourself!
         Instantiate(phaserPrefab, transform.position + 0.5f * transform.up + 2.0f * transform.forward, transform.rotation);
     }
+    */
 }
